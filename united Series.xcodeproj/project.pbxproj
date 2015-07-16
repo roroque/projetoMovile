@@ -10,6 +10,11 @@
 		0DB3FEC1F02E292D81596283 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 770335AAA028F0D0BC851520 /* Main.storyboard */; };
 		0F50A6821F072292541C9E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C28A6DF7E8E2E556A0751D /* AppDelegate.swift */; };
 		6ABCDD8D60AA7738B7B8B4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3894A421A165ED98D5A2D197 /* Images.xcassets */; };
+		811ABBC71B58287800B8C7BD /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811ABBC61B58287800B8C7BD /* EpisodeViewController.swift */; };
+		811ABBCB1B582A2800B8C7BD /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811ABBCA1B582A2800B8C7BD /* DateViewController.swift */; };
+		811ABBCD1B582C7400B8C7BD /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811ABBCC1B582C7400B8C7BD /* SeasonViewController.swift */; };
+		811ABBCF1B582F9300B8C7BD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811ABBCE1B582F9300B8C7BD /* CustomTableViewCell.swift */; };
+		814A8D9D1B56DD7000B929C2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */; };
 		9C0ED9A12A7200C24DB93E3B /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAAC4B1FA861D3EF667A0E6 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A10D1CE593A9F311B7387E0E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E904BB5E52118235AEC0A /* Storyboards.swift */; };
 		DDB765777D39CC0E241B1214 /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5596C74ACB51DAB4BBFF7 /* LaunchScreen.xib */; };
@@ -35,6 +40,11 @@
 		6C03EEAC94F2C63EE52965A4 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
 		770335AAA028F0D0BC851520 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80C28A6DF7E8E2E556A0751D /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		811ABBC61B58287800B8C7BD /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		811ABBCA1B582A2800B8C7BD /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		811ABBCC1B582C7400B8C7BD /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
+		811ABBCE1B582F9300B8C7BD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = ../Views/CustomTableViewCell.swift; sourceTree = "<group>"; };
+		814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationController.swift; path = ../Controllers/CustomNavigationController.swift; sourceTree = "<group>"; };
 		8AA5596C74ACB51DAB4BBFF7 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		95DF8C9585AEE30E1D2DA495 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
 		AF5C9C7CB134B1E7763A7217 /* united Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "united Series.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +92,7 @@
 		12C2D3523E76EE7D03AB3A44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				811ABBCE1B582F9300B8C7BD /* CustomTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +178,10 @@
 		6DBE73FAE3B9F2812357EA08 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */,
+				811ABBC61B58287800B8C7BD /* EpisodeViewController.swift */,
+				811ABBCA1B582A2800B8C7BD /* DateViewController.swift */,
+				811ABBCC1B582C7400B8C7BD /* SeasonViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -421,9 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811ABBCF1B582F9300B8C7BD /* CustomTableViewCell.swift in Sources */,
 				0F50A6821F072292541C9E80 /* AppDelegate.swift in Sources */,
+				814A8D9D1B56DD7000B929C2 /* CustomNavigationController.swift in Sources */,
+				811ABBCB1B582A2800B8C7BD /* DateViewController.swift in Sources */,
 				A10D1CE593A9F311B7387E0E /* Storyboards.swift in Sources */,
 				0DB3FEC1F02E292D81596283 /* Main.storyboard in Sources */,
+				811ABBCD1B582C7400B8C7BD /* SeasonViewController.swift in Sources */,
+				811ABBC71B58287800B8C7BD /* EpisodeViewController.swift in Sources */,
 				DDB765777D39CC0E241B1214 /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
