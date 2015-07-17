@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EYG-40-Uin">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cb1-Xf-FSw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mat-oC-nJi">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="cbA-nc-AgN">
@@ -109,7 +110,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ry-zq-k9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="-534"/>
+            <point key="canvasLocation" x="1508" y="-590"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="hmp-HN-SDJ">
@@ -133,7 +134,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-10 at 22:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-cf-nMP">
-                                <rect key="frame" x="67" y="10" width="240" height="20"/>
+                                <rect key="frame" x="67" y="10" width="240" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +162,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qX8-Mj-oCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="-534"/>
+            <point key="canvasLocation" x="2008" y="-590"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="JP5-RP-Ks9">
@@ -280,12 +281,12 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                         <color key="barTintColor" red="0.92156862750000001" green="0.3411764706" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5Qr-Mw-YRs" kind="relationship" relationship="rootViewController" id="7Qc-A2-v3K"/>
+                        <segue destination="2ne-U7-WYM" kind="relationship" relationship="rootViewController" id="4ZJ-Vr-DPy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNT-uS-6eB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="-544"/>
+            <point key="canvasLocation" x="197" y="-590"/>
         </scene>
         <!--Season 1-->
         <scene sceneID="he4-7D-QU5">
@@ -311,13 +312,13 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1CC-yu-Bt7">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkV-3q-QIh">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -356,7 +357,95 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-s1-75e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="-544"/>
+            <point key="canvasLocation" x="1082" y="-590"/>
+        </scene>
+        <!--Shows View Controller-->
+        <scene sceneID="NG1-fj-dDo">
+            <objects>
+                <viewController id="2ne-U7-WYM" customClass="ShowsViewController" customModule="united_Series" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8IY-8E-NeZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ytp-Qt-Pj5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lnc-Eu-xUg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZUm-oS-dNg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.97713462750000002" green="0.97713462750000002" blue="0.97713462750000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d21-y4-hgr">
+                                    <size key="itemSize" width="106.5" height="205"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="S8d-6i-fHk" customClass="CustomCollectionViewCell" customModule="united_Series" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ezy-j9-5DW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="153"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3C-xn-uck">
+                                                    <rect key="frame" x="11" y="161" width="84.5" height="36"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="image" destination="Ezy-j9-5DW" id="Eqd-79-EMf"/>
+                                            <outlet property="title" destination="X3C-xn-uck" id="2mH-At-Cq2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="2ne-U7-WYM" id="zhg-9O-0Bd"/>
+                                    <outlet property="delegate" destination="2ne-U7-WYM" id="QzK-ta-EOo"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZUm-oS-dNg" secondAttribute="trailing" id="A1y-jw-JFu"/>
+                            <constraint firstItem="Ytp-Qt-Pj5" firstAttribute="top" secondItem="ZUm-oS-dNg" secondAttribute="bottom" id="DYd-Ef-NTN"/>
+                            <constraint firstItem="ZUm-oS-dNg" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="centerY" id="T09-qA-Dlx"/>
+                            <constraint firstItem="ZUm-oS-dNg" firstAttribute="leading" secondItem="Lnc-Eu-xUg" secondAttribute="leading" id="Thw-7c-Y8M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c54-Ka-anu"/>
+                    <connections>
+                        <outlet property="popularCollectionView" destination="ZUm-oS-dNg" id="Qfp-9T-eMi"/>
+                        <segue destination="5Qr-Mw-YRs" kind="show" identifier="goToSeason" id="SyI-T4-6US"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNK-Np-WDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="-590"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O2k-yP-CGs">
+            <objects>
+                <viewController id="itR-1B-Oaw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mko-rk-8Os"/>
+                        <viewControllerLayoutGuide type="bottom" id="z8D-3n-ccj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s8r-us-EYI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PE-OG-DN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
