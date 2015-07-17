@@ -66,7 +66,6 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(Reusable.collectionCell, forIndexPath: indexPath) as! CustomCollectionViewCell
         let str = showsList.objectAtIndex(indexPath.row)["images"] as? String
-        
         cell.image.image = UIImage(data: NSData(contentsOfURL: NSURL(string:str!)!)!)
         cell.title.text = showsList.objectAtIndex(indexPath.row)["title"] as? String
         
