@@ -258,10 +258,13 @@ extension ShowsViewController {
 
     enum Segue: String, Printable, SegueProtocol {
         case goToSeason = "goToSeason"
+        case goToShows = "goToShows"
 
         var kind: SegueKind? {
             switch (self) {
             case goToSeason:
+                return SegueKind(rawValue: "show")
+            case goToShows:
                 return SegueKind(rawValue: "show")
             default:
                 preconditionFailure("Invalid value")
@@ -273,6 +276,8 @@ extension ShowsViewController {
             switch (self) {
             case goToSeason:
                 return SeasonViewController.self
+            case goToShows:
+                return ShowSeasonsViewController.self
             default:
                 assertionFailure("Unknown destination")
                 return nil
@@ -303,6 +308,38 @@ extension ShowsViewController {
             switch (self) {
             case collectionCell:
                 return CustomCollectionViewCell.self
+            default:
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
+//MARK: - ShowSeasonsViewController
+extension ShowSeasonsViewController { 
+
+    enum Reusable: String, Printable, ReusableViewProtocol {
+        case seasonCell = "seasonCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case seasonCell:
+                return ReusableKind(rawValue: "tableViewCell")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case seasonCell:
+                return SeasonTableViewCell.self
             default:
                 return nil
             }

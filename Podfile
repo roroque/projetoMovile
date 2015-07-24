@@ -5,8 +5,12 @@ use_frameworks!
 target "united Series", :exclusive => true do
     pod 'Alamofire'
     pod 'Result'
+    pod 'Kingfisher', '~> 1.4'
+    pod 'TUSafariActivity', '~> 1.0'
     pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
 end
+
+
 
 target :unit_tests, :exclusive => true do
     link_with 'UnitTests'

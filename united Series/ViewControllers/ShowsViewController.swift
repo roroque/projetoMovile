@@ -7,22 +7,46 @@
 //
 
 import UIKit
+import Alamofire
+import Result
+import TraktModels
 
 class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollectionViewDataSource {
 
     
     
-    var showsList  : NSMutableArray = []
+   // var showsList  : NSMutableArray = []
 
     @IBOutlet weak var popularCollectionView: UICollectionView!
+    var images : [NSData] = []
+    
+    
+    
+    private let httpClient = TraktHTTPClient()
+    private var shows: [Show] = []
+    func loadShows() {
+        httpClient.getPopularShows { [weak self] result in
+        if let shows = result.value {
+            println("conseguiu")
+            self?.shows = shows
+
+            
+            self!.popularCollectionView.reloadData()
+    } else {
+        println("oops \(result.error)")
+        } }
+    }
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Shows"
+        self.loadShows()
+       
         
-        showsList.addObject(["title":"Breaking Bad","images":"http://otvfoco.com.br/wp-content/uploads/2015/02/post219.jpg"])
+        //showsList.addObject(["title":"Breaking Bad","images":"http://otvfoco.com.br/wp-content/uploads/2015/02/post219.jpg"])
 
 
         
@@ -50,24 +74,25 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         return UIEdgeInsets(top: flowLayout.sectionInset.top, left: space,bottom: flowLayout.sectionInset.bottom, right: space)
     }
     
-    // collectionView:numberOfItemsInSection: and collectionView:cellForItemAtIndexPath: m
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return showsList.count
+        return shows.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        self.performSegueWithIdentifier("goToSeason", sender: nil)
+        let identifiers =  shows[indexPath.row].identifiers
+        
+        self.performSegueWithIdentifier("goToSeason", sender: identifiers.trakt.description)
 
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(Reusable.collectionCell, forIndexPath: indexPath) as! CustomCollectionViewCell
-        let str = showsList.objectAtIndex(indexPath.row)["images"] as? String
-        cell.image.image = UIImage(data: NSData(contentsOfURL: NSURL(string:str!)!)!)
-        cell.title.text = showsList.objectAtIndex(indexPath.row)["title"] as? String
+        cell.prepareForReuse()
+        
+        cell.loadShow(shows[indexPath.row])
         
         return cell
         
@@ -82,8 +107,15 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
             if segue.identifier == "goToSeason"
             {
                 let seasonViewController : SeasonViewController = segue.destinationViewController as! SeasonViewController
+                seasonViewController.id = sender as! String
             }
-            
+            if segue.identifier == "goToSeasons"
+            {
+                let seasonViewController : ShowSeasonsViewController = segue.destinationViewController as! ShowSeasonsViewController
+                seasonViewController.id = sender as! String
+            }
+        
+        
             
     }
 

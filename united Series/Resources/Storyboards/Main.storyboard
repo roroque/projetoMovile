@@ -44,6 +44,10 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                     <segue destination="Ghx-bP-EAV" kind="embed" id="hWZ-gW-l3f"/>
                                 </connections>
                             </containerView>
+                            <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1i-2r-8VV">
+                                <rect key="frame" x="0.0" y="48" width="320" height="216"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgL-xV-fjy">
                                 <rect key="frame" x="13" y="335" width="55" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
@@ -71,6 +75,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             <constraint firstAttribute="trailingMargin" secondItem="uN8-iH-g5d" secondAttribute="trailing" constant="-16" id="00h-hu-JoS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cbA-nc-AgN" secondAttribute="trailing" constant="-16" id="1Mp-Sy-TVY"/>
                             <constraint firstItem="J1p-CL-cIB" firstAttribute="top" secondItem="uN8-iH-g5d" secondAttribute="bottom" constant="37" id="Dg8-He-MWJ"/>
+                            <constraint firstItem="u1i-2r-8VV" firstAttribute="centerX" secondItem="cbA-nc-AgN" secondAttribute="centerX" id="Dgc-Jh-Ibx"/>
                             <constraint firstItem="VGf-DS-C8t" firstAttribute="leading" secondItem="Mat-oC-nJi" secondAttribute="leadingMargin" constant="-3" id="Diz-gV-1Oj"/>
                             <constraint firstItem="cb1-Xf-FSw" firstAttribute="top" secondItem="ZgL-xV-fjy" secondAttribute="bottom" constant="219" id="G2G-Ra-jgd"/>
                             <constraint firstItem="uN8-iH-g5d" firstAttribute="leading" secondItem="Mat-oC-nJi" secondAttribute="leadingMargin" constant="-16" id="GBi-2h-YK9"/>
@@ -79,6 +84,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             <constraint firstAttribute="trailingMargin" secondItem="VGf-DS-C8t" secondAttribute="trailing" constant="-3" id="WK8-Cw-4uL"/>
                             <constraint firstItem="cb1-Xf-FSw" firstAttribute="top" secondItem="J1p-CL-cIB" secondAttribute="bottom" constant="17" id="X5e-Uf-o37"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZgL-xV-fjy" secondAttribute="trailing" constant="236" id="ZZ3-T7-5xP"/>
+                            <constraint firstItem="u1i-2r-8VV" firstAttribute="height" secondItem="cbA-nc-AgN" secondAttribute="height" constant="16" id="d9N-Xg-S6k"/>
                             <constraint firstItem="J1p-CL-cIB" firstAttribute="leading" secondItem="Mat-oC-nJi" secondAttribute="leadingMargin" constant="-3" id="dSD-1F-wha"/>
                             <constraint firstItem="cbA-nc-AgN" firstAttribute="top" secondItem="r8A-IS-KDh" secondAttribute="bottom" id="dw1-8T-VJm"/>
                             <constraint firstItem="cb1-Xf-FSw" firstAttribute="top" secondItem="cbA-nc-AgN" secondAttribute="bottom" constant="304" id="g5n-hQ-8k4"/>
@@ -88,6 +94,8 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             <constraint firstItem="cbA-nc-AgN" firstAttribute="bottom" secondItem="VGf-DS-C8t" secondAttribute="bottom" constant="13.5" id="qSQ-FH-ON7"/>
                             <constraint firstItem="VGf-DS-C8t" firstAttribute="top" secondItem="cbA-nc-AgN" secondAttribute="bottom" constant="-59.5" id="qit-DI-BZW"/>
                             <constraint firstItem="uN8-iH-g5d" firstAttribute="top" secondItem="cbA-nc-AgN" secondAttribute="bottom" id="sf1-aB-KCd"/>
+                            <constraint firstItem="u1i-2r-8VV" firstAttribute="width" secondItem="cbA-nc-AgN" secondAttribute="width" id="wRa-Kj-4kX"/>
+                            <constraint firstItem="u1i-2r-8VV" firstAttribute="centerY" secondItem="cbA-nc-AgN" secondAttribute="centerY" constant="-8" id="wzx-85-3QP"/>
                             <constraint firstItem="ZgL-xV-fjy" firstAttribute="leading" secondItem="Mat-oC-nJi" secondAttribute="leadingMargin" constant="-3" id="xmu-Ee-wdu"/>
                         </constraints>
                         <variation key="default">
@@ -100,6 +108,9 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     <navigationItem key="navigationItem" title="Episode 7" id="SCW-Gn-asC">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="wxM-TV-9Jt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareURL:" destination="Sn4-ka-6KW" id="Ewj-Gg-thW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -110,7 +121,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ry-zq-k9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="-590"/>
+            <point key="canvasLocation" x="1688" y="-590"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="hmp-HN-SDJ">
@@ -162,7 +173,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qX8-Mj-oCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008" y="-590"/>
+            <point key="canvasLocation" x="2084" y="-545"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="JP5-RP-Ks9">
@@ -357,7 +368,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-s1-75e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-590"/>
+            <point key="canvasLocation" x="1300" y="-590"/>
         </scene>
         <!--Shows View Controller-->
         <scene sceneID="NG1-fj-dDo">
@@ -424,6 +435,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     <connections>
                         <outlet property="popularCollectionView" destination="ZUm-oS-dNg" id="Qfp-9T-eMi"/>
                         <segue destination="5Qr-Mw-YRs" kind="show" identifier="goToSeason" id="SyI-T4-6US"/>
+                        <segue destination="Uq2-h3-dKc" kind="show" identifier="goToShows" id="wnD-TO-eSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNK-Np-WDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -446,6 +458,90 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PE-OG-DN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Show Title-->
+        <scene sceneID="vQU-Am-WRY">
+            <objects>
+                <viewController title="Show Title" id="Uq2-h3-dKc" customClass="ShowSeasonsViewController" customModule="united_Series" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0PF-Bd-S7j"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJu-bw-ARq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H7A-XS-yRX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-s3-czo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonCell" id="uJW-of-QwY" customClass="SeasonTableViewCell" customModule="united_Series" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJW-of-QwY" id="Nyj-2j-2sw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X6R-VS-jay">
+                                                    <rect key="frame" x="8" y="17" width="107" height="102.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 episodes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHv-73-7w4">
+                                                    <rect key="frame" x="139" y="83" width="76" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4S-Pf-tQ9">
+                                                    <rect key="frame" x="139" y="39" width="73" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="197" id="6s1-18-CKE"/>
+                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="24" id="Ict-ef-cYM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X6R-VS-jay" secondAttribute="bottom" constant="9" id="W6f-I6-mJ6"/>
+                                                <constraint firstItem="X6R-VS-jay" firstAttribute="top" secondItem="Nyj-2j-2sw" secondAttribute="topMargin" constant="9" id="Yxn-vI-zeB"/>
+                                                <constraint firstItem="X6R-VS-jay" firstAttribute="centerY" secondItem="AHv-73-7w4" secondAttribute="centerY" constant="-24.25" id="aYb-Tu-S5P"/>
+                                                <constraint firstItem="AHv-73-7w4" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="24" id="bDF-Br-Ihj"/>
+                                                <constraint firstItem="X6R-VS-jay" firstAttribute="leading" secondItem="Nyj-2j-2sw" secondAttribute="leadingMargin" id="hv0-h1-U1d"/>
+                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="centerY" secondItem="X6R-VS-jay" secondAttribute="centerY" constant="-18.75" id="p0T-T1-NlU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeNumberLabel" destination="AHv-73-7w4" id="5iB-8M-79t"/>
+                                            <outlet property="seasonImage" destination="X6R-VS-jay" id="2cd-rb-Mlj"/>
+                                            <outlet property="seasonNumberLabel" destination="j4S-Pf-tQ9" id="9Pp-qU-oTw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uq2-h3-dKc" id="fuf-vx-AdW"/>
+                                    <outlet property="delegate" destination="Uq2-h3-dKc" id="5Mn-Me-L2q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lRZ-s3-czo" firstAttribute="leading" secondItem="H7A-XS-yRX" secondAttribute="leading" id="7AB-X0-drR"/>
+                            <constraint firstItem="EJu-bw-ARq" firstAttribute="top" secondItem="lRZ-s3-czo" secondAttribute="bottom" id="Dcs-hY-oYt"/>
+                            <constraint firstAttribute="trailing" secondItem="lRZ-s3-czo" secondAttribute="trailing" id="Q7Z-X0-0Im"/>
+                            <constraint firstItem="lRZ-s3-czo" firstAttribute="top" secondItem="0PF-Bd-S7j" secondAttribute="bottom" id="ai3-R4-2ex"/>
+                            <constraint firstItem="lRZ-s3-czo" firstAttribute="top" secondItem="0PF-Bd-S7j" secondAttribute="bottom" constant="-64" id="jcf-bm-s9q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ai3-R4-2ex"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Show Title" id="HsK-1x-tm5"/>
+                    <connections>
+                        <outlet property="episodesTableView" destination="lRZ-s3-czo" id="IPJ-TG-BGz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvj-d1-XoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="108"/>
         </scene>
     </scenes>
     <resources>

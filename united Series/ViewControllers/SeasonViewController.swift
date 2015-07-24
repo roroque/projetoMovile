@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import Alamofire
+import Result
+import TraktModels
 
 class SeasonViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     
     var seriesList  : NSMutableArray = []
+    var id : String!
+    var seasonId:String?
     @IBOutlet weak var episodesTableView: UITableView!
+    
+    
+    private let httpClient = TraktHTTPClient()
+    private var episodes: [Episode] = []
+    func loadEpisodes() {
+        httpClient.getEpisodes(id, season: seasonId!.toInt()!) { [weak self] result in
+            if let episodes = result.value {
+                println(self!.id)
+                self?.episodes = episodes
+                self?.episodesTableView.reloadData()
+                
+            } else {
+                println("oops \(result.error)")
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seriesList.addObject(["title":"S01E03","subtitle":"Lord Snow"])
-        episodesTableView.reloadData()
+        self.seasonId = "1"
+        self.loadEpisodes()
         
         // Do any additional setup after loading the view.
     }
@@ -26,14 +48,22 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
         
         if segue.identifier == "goToEpisode"
         {
-            let episodeViewController : EpisodeViewController = segue.destinationViewController as! EpisodeViewController
+            if let cellRow = sender as? Int
+            {
+                let episodeViewController : EpisodeViewController = segue.destinationViewController as! EpisodeViewController
+                episodeViewController.episode = episodes[cellRow]
+                episodeViewController.seasonId = seasonId!
+                episodeViewController.id = id
+
+            }
+            
         }
         
         
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seriesList.count
+        return self.episodes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,8 +73,8 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
         let newCell = cell as! CustomTableViewCell
         
         
-        newCell.subtitleLabel.text = (seriesList.objectAtIndex(indexPath.row)["subtitle"] as! String)
-        newCell.titleLabel.text = (seriesList.objectAtIndex(indexPath.row)["title"] as! String)
+        newCell.subtitleLabel.text = self.episodes[indexPath.row].title
+        newCell.titleLabel.text = "Ep\(self.episodes[indexPath.row].number)Se\(self.episodes[indexPath.row].seasonNumber)"
 
         
         return newCell
@@ -58,8 +88,7 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
         
         
         self.episodesTableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        self.performSegueWithIdentifier("goToEpisode", sender: nil)
+        self.performSegueWithIdentifier("goToEpisode", sender: indexPath.row)
         
         
         
