@@ -19,6 +19,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
 
     @IBOutlet weak var popularCollectionView: UICollectionView!
     var images : [NSData] = []
+    var selectedSeasonName : String?
     
     
     
@@ -27,7 +28,6 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     func loadShows() {
         httpClient.getPopularShows { [weak self] result in
         if let shows = result.value {
-            println("conseguiu")
             self?.shows = shows
 
             
@@ -82,8 +82,9 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let identifiers =  shows[indexPath.row].identifiers
+        selectedSeasonName = shows[indexPath.row].title
         
-        self.performSegueWithIdentifier("goToSeason", sender: identifiers.trakt.description)
+        self.performSegueWithIdentifier("goToSeasons", sender: identifiers.trakt.description)
 
     }
     
@@ -104,15 +105,13 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             
-            if segue.identifier == "goToSeason"
-            {
-                let seasonViewController : SeasonViewController = segue.destinationViewController as! SeasonViewController
-                seasonViewController.id = sender as! String
-            }
+          
             if segue.identifier == "goToSeasons"
             {
                 let seasonViewController : ShowSeasonsViewController = segue.destinationViewController as! ShowSeasonsViewController
+                print(sender as! String)
                 seasonViewController.id = sender as! String
+                seasonViewController.seasonName = selectedSeasonName
             }
         
         

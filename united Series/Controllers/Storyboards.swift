@@ -257,14 +257,11 @@ extension UIStoryboardSegue {
 extension ShowsViewController { 
 
     enum Segue: String, Printable, SegueProtocol {
-        case goToSeason = "goToSeason"
-        case goToShows = "goToShows"
+        case goToSeasons = "goToSeasons"
 
         var kind: SegueKind? {
             switch (self) {
-            case goToSeason:
-                return SegueKind(rawValue: "show")
-            case goToShows:
+            case goToSeasons:
                 return SegueKind(rawValue: "show")
             default:
                 preconditionFailure("Invalid value")
@@ -274,9 +271,7 @@ extension ShowsViewController {
 
         var destination: UIViewController.Type? {
             switch (self) {
-            case goToSeason:
-                return SeasonViewController.self
-            case goToShows:
+            case goToSeasons:
                 return ShowSeasonsViewController.self
             default:
                 assertionFailure("Unknown destination")
@@ -321,6 +316,45 @@ extension ShowsViewController {
 
 
 //MARK: - ShowSeasonsViewController
+extension UIStoryboardSegue {
+    func selection() -> ShowSeasonsViewController.Segue? {
+        if let identifier = self.identifier {
+            return ShowSeasonsViewController.Segue(rawValue: identifier)
+        }
+        return nil
+    }
+}
+
+extension ShowSeasonsViewController { 
+
+    enum Segue: String, Printable, SegueProtocol {
+        case goToSeason = "goToSeason"
+
+        var kind: SegueKind? {
+            switch (self) {
+            case goToSeason:
+                return SegueKind(rawValue: "show")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var destination: UIViewController.Type? {
+            switch (self) {
+            case goToSeason:
+                return SeasonViewController.self
+            default:
+                assertionFailure("Unknown destination")
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
 extension ShowSeasonsViewController { 
 
     enum Reusable: String, Printable, ReusableViewProtocol {

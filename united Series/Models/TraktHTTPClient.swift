@@ -54,6 +54,8 @@ class TraktHTTPClient {
         let router = Router.Seasons(showId)
         getJSONElements(router, completion: completion)
     }
+    
+    
     func getEpisodes(showId: String, season: Int,completion: ((Result<[Episode], NSError?>) -> Void)?) {
         getJSONElements(Router.Episodes(showId, season.description), completion: completion)
     }
@@ -114,7 +116,7 @@ class TraktHTTPClient {
                         case .Episode(let id, let season, let epNum):
                             return("shows/\(id)/seasons/\(season)/episodes\(epNum)",["extended" : "full"] , .GET)
                     case .Seasons(let id):
-                        return ("shows/\(id)",["extended": "images,full"] , .GET)
+                        return ("shows/\(id)/seasons",["extended": "images,full"], .GET)
                     case .Episodes(let id, let season):
                         return ("shows/\(id)/seasons/\(season)",["extended" : "images,full"], .GET)
 

@@ -25,8 +25,8 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
     func loadEpisodes() {
         httpClient.getEpisodes(id, season: seasonId!.toInt()!) { [weak self] result in
             if let episodes = result.value {
-                println(self!.id)
                 self?.episodes = episodes
+                
                 self?.episodesTableView.reloadData()
                 
             } else {
@@ -38,11 +38,14 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.seasonId = "1"
+        self.title = "Season \(seasonId!)"
+
+        
         self.loadEpisodes()
         
         // Do any additional setup after loading the view.
     }
+   
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

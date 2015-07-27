@@ -8,6 +8,8 @@ target "united Series", :exclusive => true do
     pod 'Kingfisher', '~> 1.4'
     pod 'TUSafariActivity', '~> 1.0'
     pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
+    pod 'FloatRatingView', :git => 'https://github.com/strekfus/FloatRatingView.git'
+    pod 'BorderedView'
 end
 
 

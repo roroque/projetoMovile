@@ -44,7 +44,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                     <segue destination="Ghx-bP-EAV" kind="embed" id="hWZ-gW-l3f"/>
                                 </connections>
                             </containerView>
-                            <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1i-2r-8VV">
+                            <view alpha="0.44999999999999962" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1i-2r-8VV">
                                 <rect key="frame" x="0.0" y="48" width="320" height="216"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -434,30 +434,12 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     <navigationItem key="navigationItem" id="c54-Ka-anu"/>
                     <connections>
                         <outlet property="popularCollectionView" destination="ZUm-oS-dNg" id="Qfp-9T-eMi"/>
-                        <segue destination="5Qr-Mw-YRs" kind="show" identifier="goToSeason" id="SyI-T4-6US"/>
-                        <segue destination="Uq2-h3-dKc" kind="show" identifier="goToShows" id="wnD-TO-eSG"/>
+                        <segue destination="Uq2-h3-dKc" kind="show" identifier="goToSeasons" id="wnD-TO-eSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNK-Np-WDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616" y="-590"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="O2k-yP-CGs">
-            <objects>
-                <viewController id="itR-1B-Oaw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mko-rk-8Os"/>
-                        <viewControllerLayoutGuide type="bottom" id="z8D-3n-ccj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="s8r-us-EYI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8PE-OG-DN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
         <!--Show Title-->
         <scene sceneID="vQU-Am-WRY">
@@ -475,40 +457,96 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonCell" id="uJW-of-QwY" customClass="SeasonTableViewCell" customModule="united_Series" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonCell" id="uJW-of-QwY" customClass="SeasonTableViewCell" customModule="united_Series" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJW-of-QwY" id="Nyj-2j-2sw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X6R-VS-jay">
-                                                    <rect key="frame" x="8" y="17" width="107" height="102.5"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 episodes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHv-73-7w4">
-                                                    <rect key="frame" x="139" y="83" width="76" height="19"/>
+                                                    <rect key="frame" x="97" y="65" width="76" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4S-Pf-tQ9">
-                                                    <rect key="frame" x="139" y="39" width="73" height="20.5"/>
+                                                    <rect key="frame" x="97" y="38" width="73" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoK-Y4-JIg" customClass="BorderedView" customModule="BorderedView">
+                                                    <rect key="frame" x="94" y="86" width="171" height="33.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZF-xZ-DW5" customClass="FloatRatingView" customModule="FloatRatingView">
+                                                            <rect key="frame" x="3" y="7" width="137" height="18.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="floatRatings" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                                                    <integer key="value" value="0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star-gray"/>
+                                                                <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star-yellow"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj5-eA-KaC">
+                                                            <rect key="frame" x="143" y="7" width="50" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.89411764705882357" green="0.29803921568627451" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="cZF-xZ-DW5" firstAttribute="top" secondItem="VoK-Y4-JIg" secondAttribute="top" constant="7" id="65N-P8-URI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cZF-xZ-DW5" secondAttribute="trailing" constant="31" id="L0G-Xo-eJ9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mj5-eA-KaC" secondAttribute="trailing" constant="-22" id="Q8o-M8-y2U"/>
+                                                        <constraint firstItem="cZF-xZ-DW5" firstAttribute="leading" secondItem="VoK-Y4-JIg" secondAttribute="leading" constant="3" id="U5h-9g-itq"/>
+                                                        <constraint firstItem="mj5-eA-KaC" firstAttribute="top" secondItem="VoK-Y4-JIg" secondAttribute="top" constant="7" id="Xz5-kl-Id1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="cZF-xZ-DW5" secondAttribute="bottom" constant="8" id="fnN-mZ-sGt"/>
+                                                        <constraint firstItem="mj5-eA-KaC" firstAttribute="leading" secondItem="cZF-xZ-DW5" secondAttribute="trailing" constant="3" id="gV2-ac-5Tn"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X6R-VS-jay">
+                                                    <rect key="frame" x="1" y="17" width="88" height="103"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="197" id="6s1-18-CKE"/>
-                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="24" id="Ict-ef-cYM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="X6R-VS-jay" secondAttribute="bottom" constant="9" id="W6f-I6-mJ6"/>
-                                                <constraint firstItem="X6R-VS-jay" firstAttribute="top" secondItem="Nyj-2j-2sw" secondAttribute="topMargin" constant="9" id="Yxn-vI-zeB"/>
-                                                <constraint firstItem="X6R-VS-jay" firstAttribute="centerY" secondItem="AHv-73-7w4" secondAttribute="centerY" constant="-24.25" id="aYb-Tu-S5P"/>
-                                                <constraint firstItem="AHv-73-7w4" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="24" id="bDF-Br-Ihj"/>
-                                                <constraint firstItem="X6R-VS-jay" firstAttribute="leading" secondItem="Nyj-2j-2sw" secondAttribute="leadingMargin" id="hv0-h1-U1d"/>
-                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="centerY" secondItem="X6R-VS-jay" secondAttribute="centerY" constant="-18.75" id="p0T-T1-NlU"/>
+                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="top" secondItem="Nyj-2j-2sw" secondAttribute="topMargin" constant="30" id="0rZ-0k-mpR"/>
+                                                <constraint firstItem="X6R-VS-jay" firstAttribute="top" secondItem="Nyj-2j-2sw" secondAttribute="topMargin" constant="9" id="Fdp-Yg-mJ7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X6R-VS-jay" secondAttribute="bottom" constant="9" id="KZD-CZ-yvI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="190" id="T0v-gJ-5fF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VoK-Y4-JIg" secondAttribute="trailing" constant="14" id="U5h-cm-8X1"/>
+                                                <constraint firstItem="AHv-73-7w4" firstAttribute="top" secondItem="j4S-Pf-tQ9" secondAttribute="bottom" constant="7" id="Ygu-pp-SaV"/>
+                                                <constraint firstItem="VoK-Y4-JIg" firstAttribute="leading" secondItem="AHv-73-7w4" secondAttribute="trailing" constant="-79" id="ZPM-w2-HLK"/>
+                                                <constraint firstItem="VoK-Y4-JIg" firstAttribute="top" secondItem="AHv-73-7w4" secondAttribute="bottom" constant="2" id="pXu-fe-37h"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VoK-Y4-JIg" secondAttribute="bottom" constant="9" id="vb1-e7-2wf"/>
+                                                <constraint firstItem="X6R-VS-jay" firstAttribute="leading" secondItem="Nyj-2j-2sw" secondAttribute="leadingMargin" constant="-7" id="xpg-ey-xZs"/>
+                                                <constraint firstItem="AHv-73-7w4" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="8" id="zHH-mo-YXN"/>
+                                                <constraint firstItem="j4S-Pf-tQ9" firstAttribute="leading" secondItem="X6R-VS-jay" secondAttribute="trailing" constant="8" id="zy9-4h-yca"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="episodeNumberLabel" destination="AHv-73-7w4" id="5iB-8M-79t"/>
+                                            <outlet property="rating" destination="mj5-eA-KaC" id="BIR-bi-BYK"/>
+                                            <outlet property="ratingView" destination="cZF-xZ-DW5" id="acb-SC-30z"/>
                                             <outlet property="seasonImage" destination="X6R-VS-jay" id="2cd-rb-Mlj"/>
                                             <outlet property="seasonNumberLabel" destination="j4S-Pf-tQ9" id="9Pp-qU-oTw"/>
                                         </connections>
@@ -536,7 +574,8 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     </view>
                     <navigationItem key="navigationItem" title="Show Title" id="HsK-1x-tm5"/>
                     <connections>
-                        <outlet property="episodesTableView" destination="lRZ-s3-czo" id="IPJ-TG-BGz"/>
+                        <outlet property="seasonTableView" destination="lRZ-s3-czo" id="bTq-WK-hhk"/>
+                        <segue destination="5Qr-Mw-YRs" kind="show" identifier="goToSeason" id="fck-Bh-MSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvj-d1-XoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -547,5 +586,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
     <resources>
         <image name="bg" width="320" height="200"/>
         <image name="clock" width="38" height="34"/>
+        <image name="star-gray" width="10" height="10"/>
+        <image name="star-yellow" width="10" height="10"/>
     </resources>
 </document>
