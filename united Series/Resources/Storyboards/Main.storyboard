@@ -289,7 +289,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPt-CY-HgW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.92156862750000001" green="0.3411764706" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.90196078430000004" green="0.4039215686" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2ne-U7-WYM" kind="relationship" relationship="rootViewController" id="4ZJ-Vr-DPy"/>
@@ -297,7 +297,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNT-uS-6eB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="197" y="-590"/>
+            <point key="canvasLocation" x="-109" y="-598"/>
         </scene>
         <!--Season 1-->
         <scene sceneID="he4-7D-QU5">
@@ -370,7 +370,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
             </objects>
             <point key="canvasLocation" x="1342" y="-590"/>
         </scene>
-        <!--Shows View Controller-->
+        <!--Shows-->
         <scene sceneID="NG1-fj-dDo">
             <objects>
                 <viewController id="2ne-U7-WYM" customClass="ShowsViewController" customModule="united_Series" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,7 +383,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZUm-oS-dNg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" red="0.97713462750000002" green="0.97713462750000002" blue="0.97713462750000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d21-y4-hgr">
                                     <size key="itemSize" width="106.5" height="205"/>
@@ -422,24 +422,52 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                                     <outlet property="delegate" destination="2ne-U7-WYM" id="QzK-ta-EOo"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-I4-gJI">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <color key="barTintColor" red="0.90196078430000004" green="0.4039215686" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="J4w-Ri-kOM">
+                                        <nil key="title"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="u4N-b5-MJr">
+                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Bxq-fY-7TA">
+                                                <rect key="frame" x="28" y="7" width="264" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="Popular"/>
+                                                    <segment title="Favorites"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="changedEvent:" destination="2ne-U7-WYM" eventType="valueChanged" id="GQq-dH-Ziz"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZUm-oS-dNg" secondAttribute="trailing" id="A1y-jw-JFu"/>
                             <constraint firstItem="Ytp-Qt-Pj5" firstAttribute="top" secondItem="ZUm-oS-dNg" secondAttribute="bottom" id="DYd-Ef-NTN"/>
-                            <constraint firstItem="ZUm-oS-dNg" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="centerY" id="T09-qA-Dlx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0VS-I4-gJI" secondAttribute="trailing" constant="-16" id="QyN-T4-UBG"/>
+                            <constraint firstItem="ZUm-oS-dNg" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="centerY" constant="44" id="T09-qA-Dlx"/>
                             <constraint firstItem="ZUm-oS-dNg" firstAttribute="leading" secondItem="Lnc-Eu-xUg" secondAttribute="leading" id="Thw-7c-Y8M"/>
+                            <constraint firstItem="Ytp-Qt-Pj5" firstAttribute="top" secondItem="0VS-I4-gJI" secondAttribute="bottom" constant="460" id="kqv-L8-Dhb"/>
+                            <constraint firstItem="0VS-I4-gJI" firstAttribute="leading" secondItem="Lnc-Eu-xUg" secondAttribute="leadingMargin" constant="-16" id="kzb-rQ-rPw"/>
+                            <constraint firstItem="0VS-I4-gJI" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="bottom" id="pgf-ZD-uQ5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="c54-Ka-anu"/>
+                    <navigationItem key="navigationItem" title="Shows" id="c54-Ka-anu"/>
                     <connections>
                         <outlet property="popularCollectionView" destination="ZUm-oS-dNg" id="Qfp-9T-eMi"/>
+                        <outlet property="segmentedOptions" destination="Bxq-fY-7TA" id="HZP-BC-9hw"/>
                         <segue destination="Uq2-h3-dKc" kind="show" identifier="goToSeasons" id="wnD-TO-eSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNK-Np-WDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="-590"/>
+            <point key="canvasLocation" x="386" y="-598"/>
         </scene>
         <!--Show Title-->
         <scene sceneID="vQU-Am-WRY">

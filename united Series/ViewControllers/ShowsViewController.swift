@@ -16,10 +16,12 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     
     
    // var showsList  : NSMutableArray = []
+    @IBOutlet weak var segmentedOptions: UISegmentedControl!
 
     @IBOutlet weak var popularCollectionView: UICollectionView!
     var images : [NSData] = []
     var selectedSeasonName : String?
+    var presentedShows : [Show] = []
     
     
     
@@ -29,6 +31,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         httpClient.getPopularShows { [weak self] result in
         if let shows = result.value {
             self?.shows = shows
+            self?.presentedShows = shows
 
             
             self!.popularCollectionView.reloadData()
@@ -41,7 +44,8 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         super.viewWillAppear(animated)
         let x = FavoritesManager()
         println(x.favoritesIdentifiers)
-        
+        loadSelected()
+        self
         
         
     }
@@ -83,13 +87,13 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shows.count
+        return presentedShows.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let identifiers =  shows[indexPath.row].identifiers
-        selectedSeasonName = shows[indexPath.row].title
+        let identifiers =  presentedShows[indexPath.row].identifiers
+        selectedSeasonName = presentedShows[indexPath.row].title
        
         
         self.performSegueWithIdentifier("goToSeasons", sender: identifiers.trakt.description)
@@ -101,7 +105,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         let cell = collectionView.dequeueReusableCell(Reusable.collectionCell, forIndexPath: indexPath) as! CustomCollectionViewCell
         cell.prepareForReuse()
         
-        cell.loadShow(shows[indexPath.row])
+        cell.loadShow(presentedShows[indexPath.row])
         
         return cell
         
@@ -109,6 +113,34 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     }
     
 
+    @IBAction func changedEvent(sender: AnyObject) {
+        loadSelected()
+        
+    }
+    
+    
+    
+    func loadSelected()
+    {
+        if segmentedOptions.selectedSegmentIndex == 0
+        {
+            presentedShows = shows
+            popularCollectionView.reloadData()
+        }
+        else
+        {
+            presentedShows = presentedShows.filter({ (T) -> Bool in
+                
+                println(FavoritesManager().favoritesIdentifiers.contains(T.identifiers.trakt))
+                return FavoritesManager().favoritesIdentifiers.contains(T.identifiers.trakt)
+                
+                
+            })
+            
+            popularCollectionView.reloadData()
+            
+        }
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

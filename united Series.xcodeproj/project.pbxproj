@@ -21,6 +21,7 @@
 		814A6AE51B59767200DA64D4 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6AE41B59767200DA64D4 /* CustomCollectionViewCell.swift */; };
 		814A8D9D1B56DD7000B929C2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */; };
 		814DE4051B67F51B00A39EBE /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DE4041B67F51B00A39EBE /* FavoritesManager.swift */; };
+		814DE4071B68221600A39EBE /* UINavigationBar+BottomHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */; };
 		81C500771B600CD5001DFE90 /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C500761B600CD5001DFE90 /* TraktHTTPClient.swift */; };
 		9C0ED9A12A7200C24DB93E3B /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAAC4B1FA861D3EF667A0E6 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A10D1CE593A9F311B7387E0E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E904BB5E52118235AEC0A /* Storyboards.swift */; };
@@ -60,6 +61,7 @@
 		814A6AE41B59767200DA64D4 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = ../Models/CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationController.swift; path = ../Controllers/CustomNavigationController.swift; sourceTree = "<group>"; };
 		814DE4041B67F51B00A39EBE /* FavoritesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesManager.swift; path = ../Controllers/FavoritesManager.swift; sourceTree = "<group>"; };
+		814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BottomHairline.swift"; sourceTree = "<group>"; };
 		81C500761B600CD5001DFE90 /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TraktHTTPClient.swift; path = ../Models/TraktHTTPClient.swift; sourceTree = "<group>"; };
 		8AA5596C74ACB51DAB4BBFF7 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		95DF8C9585AEE30E1D2DA495 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		76DEDF7C2E804C576D545337 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */,
 				811ABBCE1B582F9300B8C7BD /* CustomTableViewCell.swift */,
 				814729BB1B62D659002DC976 /* SeasonTableViewCell.swift */,
 				814A6AE41B59767200DA64D4 /* CustomCollectionViewCell.swift */,
@@ -524,6 +527,7 @@
 				814729BA1B62D2F6002DC976 /* ShowSeasonsViewController.swift in Sources */,
 				811ABBC71B58287800B8C7BD /* EpisodeViewController.swift in Sources */,
 				DDB765777D39CC0E241B1214 /* LaunchScreen.xib in Sources */,
+				814DE4071B68221600A39EBE /* UINavigationBar+BottomHairline.swift in Sources */,
 				814A6AE51B59767200DA64D4 /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
