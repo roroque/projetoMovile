@@ -7,6 +7,7 @@ PODS:
   - Kingfisher (1.4.1)
   - Nimble (1.0.0)
   - OHHTTPStubs (4.0.2)
+  - OverlayView (0.1.0)
   - Result (0.4.4):
     - Box (~> 1.2)
   - TraktModels (0.1.0):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Kingfisher (~> 1.4)
   - Nimble
   - OHHTTPStubs
+  - OverlayView (from `https://github.com/marcelofabri/OverlayView.git`)
   - Result
   - TraktModels (from `https://github.com/marcelofabri/TraktModels.git`)
   - TUSafariActivity (~> 1.0)
@@ -27,6 +29,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   FloatRatingView:
     :git: https://github.com/strekfus/FloatRatingView.git
+  OverlayView:
+    :git: https://github.com/marcelofabri/OverlayView.git
   TraktModels:
     :git: https://github.com/marcelofabri/TraktModels.git
 
@@ -34,6 +38,9 @@ CHECKOUT OPTIONS:
   FloatRatingView:
     :commit: fc30e564fa0f8e5f0ac70f42649f6a6e040c25e4
     :git: https://github.com/strekfus/FloatRatingView.git
+  OverlayView:
+    :commit: 348f514234a1d6e83ee294ab18a982c3e53c528d
+    :git: https://github.com/marcelofabri/OverlayView.git
   TraktModels:
     :commit: 4f0b767a43e110a2b590df5921dd87e63ac21b13
     :git: https://github.com/marcelofabri/TraktModels.git
@@ -47,6 +54,7 @@ SPEC CHECKSUMS:
   Kingfisher: 962a21cdc2a7b0fa63be3b2c45ea6f180feda535
   Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
   OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
+  OverlayView: cdfcc457c101fa1c95a8eb58adb69d534617db09
   Result: b44f6bc8762bbffaf2c5df58f2c7d12c3496ced8
   TraktModels: bb7f4bbee75805f72747e492d5ca6c9583c1dfcb
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546

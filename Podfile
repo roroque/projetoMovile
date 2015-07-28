@@ -10,6 +10,7 @@ target "united Series", :exclusive => true do
     pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
     pod 'FloatRatingView', :git => 'https://github.com/strekfus/FloatRatingView.git'
     pod 'BorderedView'
+    pod 'OverlayView', :git => 'https://github.com/marcelofabri/OverlayView.git'
 end
 
 

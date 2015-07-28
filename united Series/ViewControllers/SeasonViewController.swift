@@ -96,8 +96,7 @@ class SeasonViewController: UIViewController , UITableViewDelegate , UITableView
         
         
     }
-    
-    
+  
     
 
     override func didReceiveMemoryWarning() {

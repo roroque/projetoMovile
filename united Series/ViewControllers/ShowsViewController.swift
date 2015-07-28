@@ -37,7 +37,14 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         } }
     }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let x = FavoritesManager()
+        println(x.favoritesIdentifiers)
+        
+        
+        
+    }
     
     
     override func viewDidLoad() {
@@ -83,6 +90,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         
         let identifiers =  shows[indexPath.row].identifiers
         selectedSeasonName = shows[indexPath.row].title
+       
         
         self.performSegueWithIdentifier("goToSeasons", sender: identifiers.trakt.description)
 

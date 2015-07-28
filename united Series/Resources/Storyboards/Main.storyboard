@@ -368,7 +368,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-s1-75e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="-590"/>
+            <point key="canvasLocation" x="1342" y="-590"/>
         </scene>
         <!--Shows View Controller-->
         <scene sceneID="NG1-fj-dDo">
@@ -572,20 +572,29 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Show Title" id="HsK-1x-tm5"/>
+                    <navigationItem key="navigationItem" title="Show Title" id="HsK-1x-tm5">
+                        <barButtonItem key="rightBarButtonItem" image="like-heart-on" id="n6F-z6-ntz">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="favorite:" destination="Uq2-h3-dKc" id="i08-MI-2Zo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoriteButton" destination="n6F-z6-ntz" id="vfN-6i-R0F"/>
                         <outlet property="seasonTableView" destination="lRZ-s3-czo" id="bTq-WK-hhk"/>
                         <segue destination="5Qr-Mw-YRs" kind="show" identifier="goToSeason" id="fck-Bh-MSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvj-d1-XoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="108"/>
+            <point key="canvasLocation" x="962" y="-598"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="320" height="200"/>
         <image name="clock" width="38" height="34"/>
+        <image name="like-heart-on" width="34" height="30"/>
         <image name="star-gray" width="10" height="10"/>
         <image name="star-yellow" width="10" height="10"/>
     </resources>

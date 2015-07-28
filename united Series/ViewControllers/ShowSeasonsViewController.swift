@@ -13,6 +13,7 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
      var id : String!
     var seasonName : String!
     
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var seasonTableView: UITableView!
     
     
@@ -44,6 +45,20 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
         super.viewDidLoad()
         self.loadSeasons()
         self.title = seasonName
+        if FavoritesManager().favoritesIdentifiers.contains(id.toInt()!)
+        {
+            favoriteButton.tintColor = UIColor.redColor()
+
+        }
+        else
+        {
+            favoriteButton.tintColor = UIColor.blackColor()
+
+
+
+            
+        }
+
     }
     
     
@@ -81,6 +96,26 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
         
     }
     
+    @IBAction func favorite(sender: AnyObject) {
+        
+        if FavoritesManager().favoritesIdentifiers.contains(id.toInt()!)
+        {
+            FavoritesManager().removeIdentifier(id.toInt()!)
+            println("removi \(id)")
+            favoriteButton.tintColor = UIColor.blackColor()
+
+
+            
+        }
+        else
+        {
+            FavoritesManager().addIdentifier(id.toInt()!)
+            println("adicionei \(id)")
+            favoriteButton.tintColor = UIColor.redColor()
+
+        }
+        
+    }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
