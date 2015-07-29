@@ -131,6 +131,13 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
         
     }
     
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
+    
 
     
     

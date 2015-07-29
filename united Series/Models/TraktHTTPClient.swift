@@ -135,6 +135,12 @@ class TraktHTTPClient {
             
 
     }
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
     
     
     

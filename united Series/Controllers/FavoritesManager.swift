@@ -10,8 +10,14 @@ import UIKit
 
 class FavoritesManager{
     
+    
     let Default =  NSUserDefaults.standardUserDefaults()
-
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
     
     var favoritesIdentifiers : Set<Int>
     {
@@ -45,7 +51,7 @@ class FavoritesManager{
     
     func removeIdentifier(identifier: Int)
     {
-        println(identifier)
+        //println(identifier)
         var identifiers = Default.objectForKey("identifiers") as! [Int]
         for index in 0...identifiers.count
         {

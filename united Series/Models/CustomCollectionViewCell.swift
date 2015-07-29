@@ -35,6 +35,12 @@ class CustomCollectionViewCell: UICollectionViewCell {
             task = nil
             image.image = nil
     }
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
     
     
     

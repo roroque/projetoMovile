@@ -41,6 +41,12 @@ class SeasonTableViewCell: UITableViewCell {
         task = nil
         seasonImage.image = nil
     }
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
     
 
     

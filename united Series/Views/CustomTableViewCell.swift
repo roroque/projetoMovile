@@ -26,5 +26,11 @@ class CustomTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
+    deinit
+    {
+        
+        println("\(self.dynamicType) deinit")
+        
+    }
 
 }

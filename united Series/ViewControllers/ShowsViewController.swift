@@ -48,7 +48,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let x = FavoritesManager()
-        println(x.favoritesIdentifiers)
+        //println(x.favoritesIdentifiers)
         //loadSelected()
         self.navigationController?.navigationBar.hideBottomHairline()
         
@@ -63,7 +63,6 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Shows"
         self.loadShows()
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -80,6 +79,11 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.removeObserver(self, name: "favoritesChanged", object: nil)
+ 
+            
+        println("\(self.dynamicType) deinit")
+            
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +105,16 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if segmentedOptions.selectedSegmentIndex == 1
+        {
+            if presentedShows.count < FavoritesManager().favoritesIdentifiers.count
+            {
+             
+                    self.page++
+                    self.loadShows()
+                    self.loadSelected()
+            }
+        }
         return presentedShows.count
     }
     
@@ -128,6 +142,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
                 self.loadShows()
             }
         }
+    
 
         
         
@@ -153,18 +168,34 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         }
         else
         {
-            presentedShows = presentedShows.filter({ (T) -> Bool in
+            let x = FavoritesManager()
+            var count = 0;
+        
+                if count > 0
+                {
+                    page++
+                    self.loadShows()
+                }
+                count = 0
+                presentedShows = presentedShows.filter({ (T) -> Bool in
                 
-                println(FavoritesManager().favoritesIdentifiers.contains(T.identifiers.trakt))
-                return FavoritesManager().favoritesIdentifiers.contains(T.identifiers.trakt)
+                    //println(FavoritesManager().favoritesIdentifiers.contains(T.identifiers.trakt))
+                    if x.favoritesIdentifiers.contains(T.identifiers.trakt)
+                    {
+                        count++
+                    }
+                    return x.favoritesIdentifiers.contains(T.identifiers.trakt)
                 
                 
-            })
+                })
             
             popularCollectionView.reloadData()
+
             
         }
     }
+    
+  
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -173,7 +204,7 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
             if segue.identifier == "goToSeasons"
             {
                 let seasonViewController : ShowSeasonsViewController = segue.destinationViewController as! ShowSeasonsViewController
-                print(sender as! String)
+                //print(sender as! String)
                 seasonViewController.id = sender as! String
                 seasonViewController.seasonName = selectedSeasonName
             }

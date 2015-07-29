@@ -33,6 +33,12 @@ class EpisodeViewController: UIViewController {
       
     }
     
+    deinit
+    {
+       println("\(self.dynamicType) deinit")
+        
+    }
+    
     
 
 
