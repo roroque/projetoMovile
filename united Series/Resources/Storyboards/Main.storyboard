@@ -424,24 +424,25 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-I4-gJI">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cOl-Yz-FGp"/>
+                                </constraints>
                                 <color key="barTintColor" red="0.90196078430000004" green="0.4039215686" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="J4w-Ri-kOM">
                                         <nil key="title"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="u4N-b5-MJr">
-                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Bxq-fY-7TA">
-                                                <rect key="frame" x="28" y="7" width="264" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <segments>
-                                                    <segment title="Popular"/>
-                                                    <segment title="Favorites"/>
-                                                </segments>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <connections>
-                                                    <action selector="changedEvent:" destination="2ne-U7-WYM" eventType="valueChanged" id="GQq-dH-Ziz"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </barButtonItem>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uXb-KP-A1H">
+                                            <rect key="frame" x="22.5" y="7" width="275" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Popular"/>
+                                                <segment title="Favorites"/>
+                                            </segments>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="changedEvent:" destination="2ne-U7-WYM" eventType="valueChanged" id="RJs-BV-RT1"/>
+                                            </connections>
+                                        </segmentedControl>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -453,7 +454,6 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                             <constraint firstAttribute="trailingMargin" secondItem="0VS-I4-gJI" secondAttribute="trailing" constant="-16" id="QyN-T4-UBG"/>
                             <constraint firstItem="ZUm-oS-dNg" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="centerY" constant="44" id="T09-qA-Dlx"/>
                             <constraint firstItem="ZUm-oS-dNg" firstAttribute="leading" secondItem="Lnc-Eu-xUg" secondAttribute="leading" id="Thw-7c-Y8M"/>
-                            <constraint firstItem="Ytp-Qt-Pj5" firstAttribute="top" secondItem="0VS-I4-gJI" secondAttribute="bottom" constant="460" id="kqv-L8-Dhb"/>
                             <constraint firstItem="0VS-I4-gJI" firstAttribute="leading" secondItem="Lnc-Eu-xUg" secondAttribute="leadingMargin" constant="-16" id="kzb-rQ-rPw"/>
                             <constraint firstItem="0VS-I4-gJI" firstAttribute="top" secondItem="8IY-8E-NeZ" secondAttribute="bottom" id="pgf-ZD-uQ5"/>
                         </constraints>
@@ -461,7 +461,7 @@ As well as being a fearless warrior, Ragnar embodies the Norse traditions of dev
                     <navigationItem key="navigationItem" title="Shows" id="c54-Ka-anu"/>
                     <connections>
                         <outlet property="popularCollectionView" destination="ZUm-oS-dNg" id="Qfp-9T-eMi"/>
-                        <outlet property="segmentedOptions" destination="Bxq-fY-7TA" id="HZP-BC-9hw"/>
+                        <outlet property="segmentedOptions" destination="uXb-KP-A1H" id="0lU-Bl-8S0"/>
                         <segue destination="Uq2-h3-dKc" kind="show" identifier="goToSeasons" id="wnD-TO-eSG"/>
                     </connections>
                 </viewController>

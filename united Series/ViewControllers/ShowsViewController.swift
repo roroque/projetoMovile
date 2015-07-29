@@ -22,16 +22,21 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
     var images : [NSData] = []
     var selectedSeasonName : String?
     var presentedShows : [Show] = []
+    var page = 1
     
     
     
     private let httpClient = TraktHTTPClient()
     private var shows: [Show] = []
     func loadShows() {
-        httpClient.getPopularShows { [weak self] result in
+        httpClient.getPopularShows(page) { [weak self] result in
         if let shows = result.value {
-            self?.shows = shows
-            self?.presentedShows = shows
+            for i in shows
+            {
+                self?.shows.append(i)
+            }
+            self?.presentedShows = self!.shows
+            self?.loadSelected()
 
             
             self!.popularCollectionView.reloadData()
@@ -44,28 +49,37 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         super.viewWillAppear(animated)
         let x = FavoritesManager()
         println(x.favoritesIdentifiers)
-        loadSelected()
-        self
+        //loadSelected()
+        self.navigationController?.navigationBar.hideBottomHairline()
         
-        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.showBottomHairline()
+
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Shows"
         self.loadShows()
-       
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "loadSelected", name: "favoritesChanged", object: nil)
         
         //showsList.addObject(["title":"Breaking Bad","images":"http://otvfoco.com.br/wp-content/uploads/2015/02/post219.jpg"])
-
-
-        
-        
         self.popularCollectionView.reloadData()
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    deinit
+    {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: "favoritesChanged", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,6 +120,16 @@ class ShowsViewController: UIViewController,UICollectionViewDelegate , UICollect
         cell.prepareForReuse()
         
         cell.loadShow(presentedShows[indexPath.row])
+        if segmentedOptions.selectedSegmentIndex == 0
+        {
+            if indexPath.row == presentedShows.count - 1
+            {
+                self.page++
+                self.loadShows()
+            }
+        }
+
+        
         
         return cell
         

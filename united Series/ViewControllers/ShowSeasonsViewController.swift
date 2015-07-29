@@ -104,7 +104,6 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
             println("removi \(id)")
             favoriteButton.tintColor = UIColor.blackColor()
 
-
             
         }
         else
@@ -114,6 +113,10 @@ class ShowSeasonsViewController: UIViewController , UITableViewDelegate , UITabl
             favoriteButton.tintColor = UIColor.redColor()
 
         }
+        //did change
+
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.postNotificationName("favoritesChanged", object: self)
         
     }
     

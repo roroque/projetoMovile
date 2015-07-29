@@ -22,6 +22,8 @@
 		814A8D9D1B56DD7000B929C2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */; };
 		814DE4051B67F51B00A39EBE /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DE4041B67F51B00A39EBE /* FavoritesManager.swift */; };
 		814DE4071B68221600A39EBE /* UINavigationBar+BottomHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */; };
+		81B97F421B694B3800FC7D55 /* iphone6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B97F401B694B3800FC7D55 /* iphone6@2x.png */; };
+		81B97F431B694B3800FC7D55 /* iphone6plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B97F411B694B3800FC7D55 /* iphone6plus@3x.png */; };
 		81C500771B600CD5001DFE90 /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C500761B600CD5001DFE90 /* TraktHTTPClient.swift */; };
 		9C0ED9A12A7200C24DB93E3B /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAAC4B1FA861D3EF667A0E6 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A10D1CE593A9F311B7387E0E /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E904BB5E52118235AEC0A /* Storyboards.swift */; };
@@ -61,7 +63,9 @@
 		814A6AE41B59767200DA64D4 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = ../Models/CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		814A8D9C1B56DD7000B929C2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationController.swift; path = ../Controllers/CustomNavigationController.swift; sourceTree = "<group>"; };
 		814DE4041B67F51B00A39EBE /* FavoritesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesManager.swift; path = ../Controllers/FavoritesManager.swift; sourceTree = "<group>"; };
-		814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BottomHairline.swift"; sourceTree = "<group>"; };
+		814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+BottomHairline.swift"; path = "../Views/UINavigationBar+BottomHairline.swift"; sourceTree = "<group>"; };
+		81B97F401B694B3800FC7D55 /* iphone6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iphone6@2x.png"; path = "../../iphone6@2x.png"; sourceTree = "<group>"; };
+		81B97F411B694B3800FC7D55 /* iphone6plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iphone6plus@3x.png"; path = "../../iphone6plus@3x.png"; sourceTree = "<group>"; };
 		81C500761B600CD5001DFE90 /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TraktHTTPClient.swift; path = ../Models/TraktHTTPClient.swift; sourceTree = "<group>"; };
 		8AA5596C74ACB51DAB4BBFF7 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		95DF8C9585AEE30E1D2DA495 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		62E0CEB8AA5CA888E565D7E2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,7 +217,6 @@
 		76DEDF7C2E804C576D545337 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				814DE4061B68221600A39EBE /* UINavigationBar+BottomHairline.swift */,
 				811ABBCE1B582F9300B8C7BD /* CustomTableViewCell.swift */,
 				814729BB1B62D659002DC976 /* SeasonTableViewCell.swift */,
 				814A6AE41B59767200DA64D4 /* CustomCollectionViewCell.swift */,
@@ -234,6 +238,8 @@
 		824C86A446CEF49D21903D72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				81B97F401B694B3800FC7D55 /* iphone6@2x.png */,
+				81B97F411B694B3800FC7D55 /* iphone6plus@3x.png */,
 				3894A421A165ED98D5A2D197 /* Images.xcassets */,
 				05143E3B8E3DA477A9700D01 /* Storyboards */,
 				B3A3FD7A55BFD7DADB3B02C3 /* Nibs */,
@@ -367,6 +373,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B97F421B694B3800FC7D55 /* iphone6@2x.png in Resources */,
+				81B97F431B694B3800FC7D55 /* iphone6plus@3x.png in Resources */,
 				6ABCDD8D60AA7738B7B8B4AB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

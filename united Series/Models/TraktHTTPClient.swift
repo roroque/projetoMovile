@@ -46,8 +46,8 @@ class TraktHTTPClient {
     }
     
     
-    func getPopularShows(completion: ((Result<[Show], NSError?>) -> Void)?) {
-        getJSONElements(Router.PopularShows, completion: completion)
+    func getPopularShows(page: Int ,completion: ((Result<[Show], NSError?>) -> Void)?) {
+        getJSONElements(Router.PopularShows(page), completion: completion)
     }
     
     func getSeasons(showId: String,completion: ((Result<[Season], NSError?>) -> Void)?) {
@@ -99,7 +99,7 @@ class TraktHTTPClient {
                 
                 static let baseURLString = "https://api-v2launch.trakt.tv/"
                 case Show(String)
-                case PopularShows
+                case PopularShows(Int)
                 case Episode(String,String,String)
                 case Seasons(String)
                 case Episodes(String,String)
@@ -111,8 +111,8 @@ class TraktHTTPClient {
                     switch self {
                         case .Show(let id):
                         return ("shows/\(id)", ["extended": "images,full"], .GET)
-                        case .PopularShows:
-                        return ("shows/popular", ["limit": 50, "extended": "images"], .GET)
+                        case .PopularShows(let page):
+                            return ("shows/popular", ["limit": 50,"page": page , "extended": "images"], .GET)
                         case .Episode(let id, let season, let epNum):
                             return("shows/\(id)/seasons/\(season)/episodes\(epNum)",["extended" : "full"] , .GET)
                     case .Seasons(let id):
